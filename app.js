@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 import {
-  sentence
+    sentence
 } from 'txtgen';
 const app = express();
 app.use(cors());
@@ -12,7 +12,6 @@ function genParagraph(sentences) {
     for (let i = 0; i < sentences; i++) {
         paragraph += sentence() + '. ';
     }
-    console.log(paragraph);
     return paragraph;
 }
 
@@ -22,7 +21,7 @@ function capitalizeFirstLetter(sentence) {
 
 app.get('/generate-paragraph', (req, res, next) => {
     try {
-        const sentences = parseInt(req.query.sentences) || 3;
+        const sentences = parseInt(req.query.sentences) || 2;
         const punctuations = req.query.punctuations === 'true';
         console.log(punctuations);
         const capital = req.query.capital === 'true';
