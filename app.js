@@ -38,7 +38,7 @@ app.get('/generate-paragraph', (req, res, next) => {
         if (!punctuations) {
             filteredText = filteredText.replace(/[^\w\s]/g, '');
         }
-
+        filteredText = filteredText.trim();
         res.json({ paragraph: filteredText });
     } catch (err) {
         next(err); // Pass the error to the error handling middleware
