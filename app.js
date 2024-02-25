@@ -10,7 +10,7 @@ app.use(cors());
 function genParagraph(sentences) {
     let paragraph = '';
     for (let i = 0; i < sentences; i++) {
-        paragraph += sentence() + '. ';
+        paragraph += sentence() + ' ';
     }
     return paragraph;
 }
